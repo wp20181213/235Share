@@ -3,10 +3,16 @@ package share.community.model;
 public class User {
     private Integer userId;
     private String name;
-    private String accountId;
-    private String Token;
-    private Long gmtCreateTime;
-    private Long gmtModifiedTime;
+
+    public String getAccount_id() {
+        return account_id;
+    }
+
+    public void setAccount_id(String account_id) {
+        this.account_id = account_id;
+    }
+
+    private String account_id;
 
     public Integer getUserId() {
         return userId;
@@ -24,35 +30,34 @@ public class User {
         this.name = name;
     }
 
-    public String getAccountId() {
-        return accountId;
-    }
-
-    public void setAccountId(String accountId) {
-        this.accountId = accountId;
-    }
-
     public String getToken() {
-        return Token;
+        return token;
     }
 
     public void setToken(String token) {
-        Token = token;
+        this.token = token;
     }
 
-    public Long getGmtCreateTime() {
-        return gmtCreateTime;
+
+    private String token;
+
+    public Long getGmt_create() {
+        return gmt_create;
     }
 
-    public void setGmtCreateTime(Long gmtCreateTime) {
-        this.gmtCreateTime = gmtCreateTime;
+    public void setGmt_create(Long gmt_create) {
+        this.gmt_create = gmt_create;
     }
 
-    public Long getGmtModifiedTime() {
-        return gmtModifiedTime;
+    private Long gmt_create;
+
+    public Long getGmt_modified() {
+        return gmt_modified;
     }
 
-    public void setGmtModifiedTime(Long gmtModifiedTime) {
-        this.gmtModifiedTime = gmtModifiedTime;
+    public void setGmt_modified(Long gmt_modified) {
+        this.gmt_modified = gmt_modified;
     }
+
+    private Long gmt_modified;
 }
