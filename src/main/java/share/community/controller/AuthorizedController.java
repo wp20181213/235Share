@@ -49,9 +49,9 @@ public class AuthorizedController {
             User user = new User();
             user.setToken(UUID.randomUUID().toString());
             user.setName(githubUser.getName());
-            user.setAccountId(String.valueOf(githubUser.getId()));
-            user.setGmtCreateTime(System.currentTimeMillis());
-            user.setGmtModifiedTime(user.getGmtCreateTime());
+            user.setAccount_id(String.valueOf(githubUser.getId()));
+            user.setGmt_create(System.currentTimeMillis());
+            user.setGmt_modified(user.getGmt_create());
             userMapper.insert(user);
             //登录成功:写cookie和session
             request.getSession().setAttribute("user", githubUser);
