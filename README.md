@@ -18,9 +18,11 @@
 
 [Visual Paradigm](https://www.visual-paradigm.com)
 
+[Flyway](https://flywaydb.org/)
 
 ##脚本
-```sql
+```bash
+    mvn flyway:migrate
 
 ```
 # 235Share
