@@ -23,6 +23,7 @@
 ##脚本
 ```bash
     mvn flyway:migrate
-
+    create user if not exists sa password '123';
+    alter user sa admin true;
 ```
 # 235Share
