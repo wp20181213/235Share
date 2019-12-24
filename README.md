@@ -20,6 +20,8 @@
 
 [Flyway](https://flywaydb.org/)
 
+[Lombok](https://projectlombok.org/)
+
 ##脚本
 ```bash
     mvn flyway:migrate
