@@ -6,14 +6,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.thymeleaf.standard.processor.StandardXmlLangTagProcessor;
 import share.community.mapper.QuestionMapper;
 import share.community.mapper.UserMapper;
 import share.community.model.Question;
 import share.community.model.User;
 
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
@@ -75,9 +73,9 @@ public class PublishController {
         }
 
         Question question = new Question();
-        question.getTitle(title);
-        question.getDescription(description);
-        question.getTag(tag);
+        question.setTitle(title);
+        question.setDescription(description);
+        question.setTag(tag);
         question.setCreator(user.getUserId());
         question.setGmtCreate(System.currentTimeMillis());
         question.setGmtModified(question.getGmtCreate());
