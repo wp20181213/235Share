@@ -13,7 +13,7 @@
 
 [菜鸟教程](https://www.runoob.com/)
 
-[Thymeleaf]()
+[Thymeleaf](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html)
 
 ##工具
 [Git](https://git-scm.com/download)
