@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.thymeleaf.model.IModel;
 import share.community.Service.QuestionService;
 import share.community.dto.QuestionDTO;
@@ -28,7 +29,9 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(HttpServletRequest request,
-                        Model model) {
+                        Model model,
+                        @RequestParam(name = "page", defaultValue = "1") Integer Page,
+                        @RequestParam(name = "size", defaultValue = "5") Integer size) {
         Cookie[] cookies = request.getCookies();
         if(cookies != null && cookies.length != 0) {
             for (Cookie cookie : cookies) {
@@ -43,7 +46,7 @@ public class IndexController {
             }
         }
 
-        List<QuestionDTO> questionList = questionService.list();
+        List<QuestionDTO> questionList = questionService.list(Page, size);
         model.addAttribute("questions", questionList);
         return "index";
     }
