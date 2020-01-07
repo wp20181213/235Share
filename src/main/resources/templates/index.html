@@ -44,16 +44,16 @@
         </div>
     </div>
 </nav>
-<div class="media">
+<div class="media" th:each="question : ${questions}">
     <div class="media-left">
         <a href="#">
-            <img class="media-object img-rounded" src="https://avatars2.githubusercontent.com/u/45837785?v=4">
+            <img class="media-object img-rounded" th:src="${question.user.avatarUrl}">
         </a>
     </div>
     <div class="media-body">
-        <h4 class="media-heading">欢迎来到235的论坛</h4>
-        点击进入235讨论组<br>
-        <span class="text-desc">2 个回复 · 31 次浏览 · 1 小时前</span>
+        <h4 class="media-heading" th:text="${question.title}">欢迎来到235的论坛</h4>
+        <span th:text="${question.description}"></span><br>
+        <span class="text-desc"><span th:text="${question.commentCount}"></span> 个回复 · <span th:text="${question.viewCount}"></span> 次浏览 · <span th:text="${question.likeCount}"></span> 个赞 · <span th:text="${#dates.format(question.gmtCreate, 'dd MM YYYY')}"></span></span>
     </div>
 </div>
 </body>
