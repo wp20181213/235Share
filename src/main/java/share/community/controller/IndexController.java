@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.thymeleaf.model.IModel;
 import share.community.Service.QuestionService;
+import share.community.dto.PaginationDTO;
 import share.community.dto.QuestionDTO;
 import share.community.mapper.QuestionMapper;
 import share.community.mapper.UserMapper;
@@ -46,8 +47,8 @@ public class IndexController {
             }
         }
 
-        List<QuestionDTO> questionList = questionService.list(Page, size);
-        model.addAttribute("questions", questionList);
+        PaginationDTO pagination = questionService.list(Page, size);
+        model.addAttribute("questions", pagination);
         return "index";
     }
 }

@@ -15,4 +15,7 @@ public interface QuestionMapper {
 
     @Select("select * from question limit #{offset}, #{size}")
     List<Question> list(Integer offset, Integer size);
+
+    @Select(("select count(1) question"))
+    Integer count();
 }
